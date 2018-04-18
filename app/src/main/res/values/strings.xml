@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NotifyOficial</string>
+    <string name="user_edit_hint">Usuario</string>
+    <string name="password_edit_hint">Contraseña</string>
+    <string name="start_button">Iniciar</string>
+    <string name="textview_link">He olvidado mi contraseña </string>
+    <string name="register_button">Registrarme</string>
+
+
+
+</resources>
