@@ -3,14 +3,11 @@ package dragcopy.notifyoficial;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-
 import java.util.ArrayList;
-
 import dragcopy.notifyoficial.Adapters.MenuAdapter;
 
 public class Inicio extends AppCompatActivity {
@@ -22,13 +19,13 @@ public class Inicio extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                        listView.setVisibility(View.VISIBLE);
+                    listView.setVisibility(View.VISIBLE);
                     break;
                 case R.id.navigation_dashboard:
-                        listView.setVisibility(View.GONE);
+                    listView.setVisibility(View.GONE);
                     break;
                 case R.id.navigation_notifications:
-                        listView.setVisibility(View.GONE);
+                    listView.setVisibility(View.GONE);
                     break;
             }
             return true;
