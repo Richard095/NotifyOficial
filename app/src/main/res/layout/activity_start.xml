@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/name"
         android:scaleType="center"/>
+
     <!--cambia las imagenes a calidad buena si quieres, las mias son recortadas de los diseños  -->
 
 </RelativeLayout>
