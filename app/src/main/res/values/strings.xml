@@ -7,5 +7,10 @@
     <string name="register_button">Registrarme</string>
 
 
+    <string name="title_activity_inicio">Inicio</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Novedades</string>
+    <string name="title_notifications">Calificar App</string>
+
 
 </resources>
