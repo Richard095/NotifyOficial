@@ -15,4 +15,13 @@
         <item name="colorAccent">@color/notifystatus</item>
     </style>
 
+    <style name="AppThemeBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

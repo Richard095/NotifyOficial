@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/acerca"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Acerca de" />
+        <item
+            android:id="@+id/contacto"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Contacto" />
+        <item
+            android:id="@+id/soporte"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Soporte" />
+        <item
+            android:id="@+id/salir"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Salir" />
+    </group>
+
+    <item android:title="Copyright (c) 2018 Notify">
+        
+    </item>
+
+
+
+</menu>
