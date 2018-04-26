@@ -118,7 +118,6 @@
                 android:textStyle="bold"
                 android:padding="12dp"/>
 
-
         </LinearLayout>
 
     </RelativeLayout>
