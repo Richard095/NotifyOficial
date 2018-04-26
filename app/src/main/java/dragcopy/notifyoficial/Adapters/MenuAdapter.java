@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowview = inflater.inflate(R.layout.opcion_menu,null,true);
 
@@ -40,6 +41,13 @@ public class MenuAdapter extends ArrayAdapter<String> {
 
         text.setText(items.get(position));
         imageView.setImageResource(images.get(position));
+
+        rowview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, items.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return rowview;
     }
