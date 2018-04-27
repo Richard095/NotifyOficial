@@ -9,9 +9,8 @@
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Novedades</string>
     <string name="title_notifications">Calificar App</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">button_open</string>
+    <string name="navigation_drawer_close">button_close</string>
 
 
 </resources>

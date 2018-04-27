@@ -11,18 +11,25 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        new CountDownTimer(2000,1000){
-            @Override
-            public void onTick(long millisUntilFinished) {
+        try {
+            new CountDownTimer(2000,1000){
+                @Override
+                public void onTick(long millisUntilFinished) {
 
-            }
+                }
 
-            @Override
-            public void onFinish() {
-                Intent i = new Intent(StartActivity.this,MainActivity.class);
-                startActivity(i);
-                finish();
-            }
-        }.start();
+                @Override
+                public void onFinish() {
+                    Intent i = new Intent(StartActivity.this,MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }.start();
+        }catch (Exception e){
+
+        }
+
+
     }
+
 }
