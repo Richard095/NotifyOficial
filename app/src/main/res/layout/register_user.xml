@@ -109,7 +109,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style_register_user"
+            android:background="@drawable/button_style"
             android:text="Registrarme"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"

@@ -40,6 +40,7 @@ public class Inicio extends AppCompatActivity
 
     ArrayList<String> texts = new ArrayList<>();
     ArrayList<Integer> image = new ArrayList<>();
+    ArrayList<Class> classes = new ArrayList<>();
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,25 +61,30 @@ public class Inicio extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        MenuAdapter listAdapter = new MenuAdapter(this,texts, image);
+        MenuAdapter listAdapter = new MenuAdapter(this,texts, image,classes);
         listView = (ListView) findViewById(R.id.list);
         listView.setDivider(null);
         listView.setAdapter(listAdapter);
 
         texts.add("Instituto");
         image.add(R.drawable.ic_notifications_black_24dp);
+        classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
         image.add(R.drawable.ic_notifications_black_24dp);
+        classes.add(InstitutoActivity.class);
 
         texts.add("Eventos");
         image.add(R.drawable.ic_notifications_black_24dp);
+        classes.add(InstitutoActivity.class);
 
         texts.add("Convocatorias");
         image.add(R.drawable.ic_notifications_black_24dp);
+        classes.add(InstitutoActivity.class);
 
         texts.add("Becas");
         image.add(R.drawable.ic_notifications_black_24dp);
+        classes.add(InstitutoActivity.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

@@ -1,6 +1,7 @@
 package dragcopy.notifyoficial.Adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,11 +21,13 @@ import dragcopy.notifyoficial.R;
 
 public class MenuAdapter extends ArrayAdapter<String> {
     private final Activity context;
+    private final ArrayList<Class> towhere;
     private final ArrayList<String> items;
     private final ArrayList<Integer> images;
-    public MenuAdapter(Activity context, ArrayList<String> items, ArrayList<Integer> images) {
+    public MenuAdapter(Activity context, ArrayList<String> items, ArrayList<Integer> images,ArrayList<Class> towhere) {
         super(context, R.layout.opcion_menu,items);
         this.context = context;
+        this.towhere=towhere;
         this.items = items;
         this.images = images;
     }
@@ -45,7 +47,8 @@ public class MenuAdapter extends ArrayAdapter<String> {
         rowview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, items.get(position), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context,towhere.get(position));
+                context.startActivity(i);
             }
         });
 
