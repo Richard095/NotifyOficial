@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_register).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Registrarse", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this,RegistroActivity.class);
+                startActivity(i);
             }
         });
     }

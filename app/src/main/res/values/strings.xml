@@ -12,6 +12,7 @@
     <string name="navigation_drawer_open">button_open</string>
     <string name="navigation_drawer_close">button_close</string>
     <string name="notify">Notify® </string>
+    <string name="calificar_instituci_n">Calificar Institución</string>
 
 
 </resources>

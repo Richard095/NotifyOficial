@@ -20,7 +20,15 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".RegistroActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".InstitutoActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"
