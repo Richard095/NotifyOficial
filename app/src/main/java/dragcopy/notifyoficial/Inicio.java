@@ -72,7 +72,7 @@ public class Inicio extends AppCompatActivity
 
         texts.add("Noticias");
         image.add(R.drawable.ic_notifications_black_24dp);
-        classes.add(InstitutoActivity.class);
+        classes.add(NoticiasActivity.class);
 
         texts.add("Eventos");
         image.add(R.drawable.ic_notifications_black_24dp);

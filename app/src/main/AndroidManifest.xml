@@ -30,6 +30,9 @@
             android:name=".InstitutoActivity"
             android:theme="@style/Base.Theme.AppCompat.Light" />
         <activity
+            android:name=".NoticiasActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity
             android:name=".Inicio"
             android:label="@string/title_home"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
