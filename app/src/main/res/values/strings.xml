@@ -11,6 +11,7 @@
     <string name="title_notifications">Calificar App</string>
     <string name="navigation_drawer_open">button_open</string>
     <string name="navigation_drawer_close">button_close</string>
+    <string name="notify">Notify® </string>
 
 
 </resources>
