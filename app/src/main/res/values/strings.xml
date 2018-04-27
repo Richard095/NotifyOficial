@@ -13,6 +13,7 @@
     <string name="navigation_drawer_close">button_close</string>
     <string name="notify">Notify® </string>
     <string name="calificar_instituci_n">Calificar Institución</string>
+    <string name="por_favor_ingrese_los_siguientes_datos">Por favor ingrese los siguientes datos</string>
 
 
 </resources>
