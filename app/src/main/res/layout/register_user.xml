@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/content_instruction"
-        android:gravity="center_vertical">
+        android:gravity="center">
 
         <TextView
-            android:textColor="@color/colorPrimario"
-            android:layout_width="match_parent"
+
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notify"
+            android:textColor="@color/colorPrimario"
             android:textAlignment="center"
             android:textSize="30dp"
             android:textStyle="bold" />
