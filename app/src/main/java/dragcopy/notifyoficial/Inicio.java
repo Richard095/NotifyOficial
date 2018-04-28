@@ -26,12 +26,15 @@ public class Inicio extends AppCompatActivity
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     listView.setVisibility(View.VISIBLE);
+                    findViewById(R.id.calificar).setVisibility(View.GONE);
                     break;
                 case R.id.navigation_dashboard:
                     listView.setVisibility(View.GONE);
+                    findViewById(R.id.calificar).setVisibility(View.GONE);
                     break;
                 case R.id.navigation_notifications:
                     listView.setVisibility(View.GONE);
+                    findViewById(R.id.calificar).setVisibility(View.VISIBLE);
                     break;
             }
             return true;
