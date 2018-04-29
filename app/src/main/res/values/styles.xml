@@ -3,16 +3,16 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/notifystatus</item>
-        <item name="colorPrimaryDark">@color/notifystatus</item>
-        <item name="colorAccent">@color/notifystatus</item>
+        <item name="colorPrimary">@color/colorPrimario</item>
+        <item name="colorPrimaryDark">@color/colorPrimario</item>
+        <item name="colorAccent">@color/colorPrimario</item>
     </style>
 
     <style name="AppThemeBar" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/notifystatus</item>
-        <item name="colorPrimaryDark">@color/notifystatus</item>
-        <item name="colorAccent">@color/notifystatus</item>
+        <item name="colorPrimary">@color/colorPrimario</item>
+        <item name="colorPrimaryDark">@color/colorPrimario</item>
+        <item name="colorAccent">@color/colorPrimario</item>
     </style>
 
     <style name="AppThemeBar.NoActionBar">
