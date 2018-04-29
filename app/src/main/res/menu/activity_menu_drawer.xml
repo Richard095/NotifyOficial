@@ -21,11 +21,17 @@
             android:icon="@drawable/ic_dashboard_black_24dp"
             android:title="Salir" />
     </group>
-    
+
+
+
     <item android:title="Copyright (c) 2018 Notify">
-        
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title=""
+                android:checkable="false"
+                android:enabled="false"/>
+        </menu>
     </item>
-
-
 
 </menu>

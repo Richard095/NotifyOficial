@@ -91,7 +91,7 @@ public class Inicio extends AppCompatActivity
 
         texts.add("Becas");
         image.add(R.drawable.ic_notifications_black_24dp);
-        classes.add(InstitutoActivity.class);
+        classes.add(BecasActivity.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

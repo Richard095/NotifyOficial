@@ -26,7 +26,7 @@ public class NoticiasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         listView = (ListView) findViewById(R.id.list);
-        NoticiasAdapter listAdapter = new NoticiasAdapter(this, titles, image,news,fullnews,listView);
+        NoticiasAdapter listAdapter = new NoticiasAdapter(this, titles, image,news,fullnews,listView,true);
         listView.setDivider(null);
         listView.setAdapter(listAdapter);
 

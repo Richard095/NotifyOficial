@@ -25,14 +25,16 @@ public class NoticiasAdapter extends ArrayAdapter<String> {
     private final ArrayList<String> news;
     private final ArrayList<String> fullnew;
     private final ArrayList<Integer> images;
+    private final boolean isnoticia;
     private ListView list;
-    public NoticiasAdapter(Activity context, ArrayList<String> items, ArrayList<Integer> images, ArrayList<String> news, ArrayList<String> fullnew, ListView list) {
+    public NoticiasAdapter(Activity context, ArrayList<String> items, ArrayList<Integer> images, ArrayList<String> news, ArrayList<String> fullnew, ListView list,boolean isnoticia) {
         super(context, R.layout.opcion_menu,items);
         this.context = context;
         this.news=news;
         this.title = items;
         this.images = images;
         this.fullnew = fullnew;
+        this.isnoticia=isnoticia;
         this.list=list;
     }
 
@@ -40,7 +42,12 @@ public class NoticiasAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
-        final View rowview = inflater.inflate(R.layout.new_noticia,null,true);
+        final View rowview;
+        if(isnoticia) {
+            rowview = inflater.inflate(R.layout.new_noticia, null, true);
+        }else{
+            rowview = inflater.inflate(R.layout.new_beca, null, true);
+        }
 
         final TextView titletv = rowview.findViewById(R.id.title);
         final TextView notice = rowview.findViewById(R.id.notice);
