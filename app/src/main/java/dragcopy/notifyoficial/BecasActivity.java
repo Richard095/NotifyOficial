@@ -2,7 +2,10 @@ package dragcopy.notifyoficial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,9 +24,19 @@ public class BecasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticias);
 
-        getSupportActionBar().setTitle("Becas");
+        //De aqui hasta donde diga es para la barra de estado, los 3 iconos finales
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        View v = LayoutInflater.from(this).inflate(R.layout.actionbar,null);
+        getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(v);
+
+        ActionBar actionBar = new ActionBar(toolbar,v,this,"Becas");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //hasta aqui, igual agrega el include que veas en los xml a donde quieras que apareca esta barra personalizada
 
         listView = (ListView) findViewById(R.id.list);
         NoticiasAdapter listAdapter = new NoticiasAdapter(this, titles, image,news,fullnews,listView,false);
@@ -32,17 +45,20 @@ public class BecasActivity extends AppCompatActivity {
 
         titles.add("Titulo de la beca 1");
         image.add(R.drawable.ic_notifications_black_24dp);
-        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
+        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
+                "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
         titles.add("Titulo de la beca 2");
         image.add(R.drawable.ic_notifications_black_24dp);
-        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
+        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
+                "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
         titles.add("Titulo de la beca 3");
         image.add(R.drawable.ic_notifications_black_24dp);
-        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
+        news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
+                "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
 

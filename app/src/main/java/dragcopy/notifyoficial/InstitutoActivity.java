@@ -2,7 +2,10 @@ package dragcopy.notifyoficial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 public class InstitutoActivity extends AppCompatActivity {
 
@@ -12,7 +15,16 @@ public class InstitutoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_institucion);
-        getSupportActionBar().setTitle("Institución");
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        View v = LayoutInflater.from(this).inflate(R.layout.actionbar,null);
+        getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(v);
+
+        ActionBar actionBar = new ActionBar(toolbar,v,this,"Instituto");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

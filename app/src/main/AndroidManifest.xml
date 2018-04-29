@@ -30,13 +30,13 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".InstitutoActivity"
-            android:theme="@style/AppThemeNormal" />
+            android:theme="@style/AppThemeBar.NoActionBar" />
         <activity
             android:name=".NoticiasActivity"
-            android:theme="@style/AppThemeNormal" />
+            android:theme="@style/AppThemeBar.NoActionBar" />
         <activity
             android:name=".BecasActivity"
-            android:theme="@style/AppThemeNormal" />
+            android:theme="@style/AppThemeBar.NoActionBar" />
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"
