@@ -12,8 +12,6 @@
        android:textColor="@color/colorPrimario"
        android:textSize="40sp"
        android:textStyle="bold"/>
-
-
     <!--cambia las imagenes a calidad buena
     si quieres, las mias son recortadas de los diseños  -->
 

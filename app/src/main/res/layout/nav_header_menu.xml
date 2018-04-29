@@ -17,7 +17,7 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_keyboard_backspace_black_24dp"
+        app:srcCompat="@drawable/back"
         android:layout_margin="14dp"/>
 
     <TextView
@@ -45,7 +45,7 @@
 
     </RelativeLayout>
     <TextView
-        android:background="@color/colorPrimario"
+        android:background="@color/notifystatus"
         android:layout_width="match_parent"
         android:layout_height="2dp" />
 </LinearLayout>

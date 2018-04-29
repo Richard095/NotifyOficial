@@ -21,14 +21,22 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".RegistroActivity"
             android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".InstitutoActivity"
-            android:theme="@style/Base.Theme.AppCompat.Light" />
+            android:theme="@style/AppThemeBar.NoActionBar" />
+        <activity
+            android:name=".NoticiasActivity"
+            android:theme="@style/AppThemeBar.NoActionBar" />
+        <activity
+            android:name=".BecasActivity"
+            android:theme="@style/AppThemeBar.NoActionBar" />
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"

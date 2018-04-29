@@ -10,4 +10,10 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_user);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+    }
 }

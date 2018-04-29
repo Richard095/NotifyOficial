@@ -5,150 +5,118 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/content_instruction"
+        android:gravity="center_vertical">
 
+        <TextView
+            android:textColor="@color/colorPrimario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notify"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/content_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/content_into"
+        android:gravity="center_vertical">
 
-            <LinearLayout
-                android:id="@+id/title_container"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Porfavor ingrese los siguientes datos"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content_into"
+        android:background="@color/colorEdit"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@color/colorEdit">
+
+            <EditText
+                android:id="@+id/name_edit"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_above="@+id/scrollView">
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Notify"
-                    android:textColor="@color/colorPrimario"
-                    android:textAlignment="center"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:padding="5dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/colorEdit"
-                    android:padding="5dp">
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Instituto tecnologico de Cd.Valles"
-                        android:textColor="@color/colorGrey"
-                        android:textAlignment="center"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Clave: TEC9064537732018"
-                        android:textColor="@color/colorGrey"
-                        android:textAlignment="center"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-                <ScrollView
-                    android:id="@+id/scrollView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
-
-                <RelativeLayout
-                    android:id="@+id/content_into"
-                    android:background="@color/colorEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:paddingLeft="50dp"
-                    android:paddingRight="50dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_centerInParent="true"
-                        android:background="@color/colorEdit">
-
-                        <EditText
-                            android:id="@+id/name_edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/edit_text_style2"
-                            android:layout_marginBottom="10dp"
-                            android:hint="Nombre"
-                            android:textAlignment="center"/>
-                        <EditText
-                            android:id="@+id/last_name_edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/edit_text_style2"
-                            android:layout_marginBottom="10dp"
-                            android:hint="Apellidos"
-                            android:textAlignment="center"/>
-                        <EditText
-                            android:id="@+id/user_edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/edit_text_style2"
-                            android:layout_marginBottom="10dp"
-                            android:hint="Usuario"
-                            android:textAlignment="center"/>
-                        <EditText
-                            android:id="@+id/password_edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/edit_text_style2"
-                            android:layout_marginBottom="10dp"
-                            android:hint="Contraseña"
-                            android:textAlignment="center"
-                            android:inputType="textPassword"/>
-                        <EditText
-                            android:id="@+id/Confirm_Password_edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/edit_text_style2"
-                            android:layout_marginBottom="10dp"
-                            android:hint="Confirmar contraseña"
-                            android:textAlignment="center"
-                            android:inputType="textPassword"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                </ScrollView>
-
-
-            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style2"
+                android:layout_marginBottom="10dp"
+                android:hint="Nombre"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/last_name_edit"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_below="@+id/scrollView">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_style_register_user"
-                    android:text="Registrarme"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="16dp"
-                    android:textStyle="bold"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style2"
+                android:layout_marginBottom="10dp"
+                android:hint="Apellidos"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/user_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style2"
+                android:layout_marginBottom="10dp"
+                android:hint="Usuario"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/password_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style2"
+                android:layout_marginBottom="10dp"
+                android:hint="Contraseña"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/Confirm_Password_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style2"
+                android:layout_marginBottom="10dp"
+                android:hint="Confirmar contraseña"
+                android:textAlignment="center"
+                android:inputType="textPassword"/>
 
-            </RelativeLayout>
+        </LinearLayout>
 
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/content_into"
+        android:gravity="center_vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="Registrarme"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
 
 
 
