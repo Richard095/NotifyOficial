@@ -2,6 +2,7 @@ package dragcopy.notifyoficial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,6 +20,10 @@ public class NoticiasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticias);
+
+        getSupportActionBar().setTitle("Noticias");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         listView = (ListView) findViewById(R.id.list);
         NoticiasAdapter listAdapter = new NoticiasAdapter(this, titles, image,news,fullnews,listView);
@@ -61,5 +66,21 @@ public class NoticiasActivity extends AppCompatActivity {
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:finish();
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
     }
 }

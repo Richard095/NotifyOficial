@@ -49,6 +49,8 @@ public class MenuAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 Intent i = new Intent(context,towhere.get(position));
                 context.startActivity(i);
+                context.overridePendingTransition(R.anim.right_in, R.anim.right_out);
+
             }
         });
 

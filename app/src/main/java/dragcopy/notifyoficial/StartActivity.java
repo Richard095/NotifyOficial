@@ -22,6 +22,7 @@ public class StartActivity extends AppCompatActivity {
                 public void onFinish() {
                     Intent i = new Intent(StartActivity.this,MainActivity.class);
                     startActivity(i);
+                    overridePendingTransition(R.anim.right_in, R.anim.right_out);
                     finish();
                 }
             }.start();
