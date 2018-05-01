@@ -1,5 +1,6 @@
 package dragcopy.notifyoficial;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -87,7 +88,11 @@ public class Inicio extends AppCompatActivity
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
+
+                Intent ListSong = new Intent(getApplicationContext(), Perfil_Activity.class);
+                startActivity(ListSong);
+
+                //Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
             }
         });
 
