@@ -44,6 +44,9 @@
         <activity
             android:name=".EventosActivity"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".ConvocatoriasActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 
 </manifest>
