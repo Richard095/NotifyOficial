@@ -16,19 +16,21 @@
         android:textStyle="bold"
         android:id="@+id/title"/>
 
+
     <ImageButton
         android:id="@+id/favoritos"
-        android:layout_width="wrap_content"
+        android:layout_width="22dp"
         android:layout_height="match_parent"
-        android:background="#00000000"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_margin="10dp"
+        android:scaleType="fitCenter"
         android:layout_toLeftOf="@+id/recientes"
-        android:src="@drawable/ic_dashboard_black_24dp" />
+        android:src="@drawable/star" />
     <ImageButton
         android:id="@+id/recientes"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#00000000"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_margin="10dp"
         android:layout_toLeftOf="@+id/photo"
         android:src="@drawable/ic_notifications_black_24dp" />
@@ -37,7 +39,7 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#00000000"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_margin="10dp"
         android:src="@drawable/ic_menu_gallery" />
     <TextView

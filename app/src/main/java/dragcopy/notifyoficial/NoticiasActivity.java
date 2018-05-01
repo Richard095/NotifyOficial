@@ -42,37 +42,37 @@ public class NoticiasActivity extends AppCompatActivity {
         listView.setAdapter(listAdapter);
 
         titles.add("Instituto");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
         titles.add("Instituto 1");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
         titles.add("Instituto 2");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
         titles.add("Instituto 3");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
         titles.add("Instituto 4");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
 
         titles.add("Instituto 5");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
         fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
                 "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");

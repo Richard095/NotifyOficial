@@ -44,19 +44,19 @@ public class BecasActivity extends AppCompatActivity {
         listView.setAdapter(listAdapter);
 
         titles.add("Titulo de la beca 1");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
         titles.add("Titulo de la beca 2");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original");
         titles.add("Titulo de la beca 3");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.star);
         news.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
                 "Le ponemos mas texto para mas renglones");
         fullnews.add("Aqui va el texto corto de la beca que se mostrar en el card view puedes poner el que quieras, ya luego hare que se redusca el texto original" +
