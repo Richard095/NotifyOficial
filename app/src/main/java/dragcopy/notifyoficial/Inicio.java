@@ -105,23 +105,23 @@ public class Inicio extends AppCompatActivity
         listView.setAdapter(listAdapter);
 
         texts.add("Instituto");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.instituto);
         classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.noticias);
         classes.add(NoticiasActivity.class);
 
         texts.add("Eventos");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.events);
         classes.add(InstitutoActivity.class);
 
         texts.add("Convocatorias");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.becas);
         classes.add(ConvocatoriasActivity.class);
 
         texts.add("Becas");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.becas);
         classes.add(BecasActivity.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
