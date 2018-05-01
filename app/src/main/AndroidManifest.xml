@@ -41,6 +41,9 @@
             android:name=".Inicio"
             android:label="@string/title_home"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".EventosActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 
 </manifest>

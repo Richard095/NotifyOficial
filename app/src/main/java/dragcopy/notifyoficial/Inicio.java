@@ -58,9 +58,6 @@ public class Inicio extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle("Inicio");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorWhite)));
-        //toolbar.setTitleTextColor(getResources().getColor(R.color.colorBlack));
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,7 +106,7 @@ public class Inicio extends AppCompatActivity
 
         texts.add("Eventos");
         image.add(R.drawable.ic_notifications_black_24dp);
-        classes.add(InstitutoActivity.class);
+        classes.add(EventosActivity.class);
 
         texts.add("Convocatorias");
         image.add(R.drawable.ic_notifications_black_24dp);
