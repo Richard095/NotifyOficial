@@ -23,7 +23,7 @@ public class Perfil_Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(v);
 
-        ActionBar actionBar = new ActionBar(toolbar,v,this,"Pefíl");
+        ActionBar actionBar = new ActionBar(v,this,"Instituto");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

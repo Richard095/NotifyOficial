@@ -40,7 +40,14 @@
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"
-            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+            android:theme="@style/AppThemeBar.NoActionBar"/>
+
+        <activity
+            android:name=".Perfil_Activity"
+            android:label="@string/title_home"
+            android:theme="@style/AppThemeBar.NoActionBar"/>
+
+
     </application>
 
 </manifest>
