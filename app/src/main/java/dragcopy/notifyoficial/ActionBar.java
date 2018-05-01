@@ -12,7 +12,7 @@ import android.widget.Toast;
  */
 
 public class ActionBar extends AppCompatActivity{
-    public ActionBar(android.support.v7.widget.Toolbar toolbar, View v, final Context context,String title){
+    public ActionBar(View v, final Context context,String title){
         v.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,6 +1,5 @@
 package dragcopy.notifyoficial;
 
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,7 +23,7 @@ import dragcopy.notifyoficial.Adapters.MenuAdapter;
 
 public class Inicio extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+        private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -48,8 +46,6 @@ public class Inicio extends AppCompatActivity
         }
     };
 
-
-
     ArrayList<String> texts = new ArrayList<>();
     ArrayList<Integer> image = new ArrayList<>();
     ArrayList<Class> classes = new ArrayList<>();
@@ -63,8 +59,8 @@ public class Inicio extends AppCompatActivity
         toolbar.setTitle("Inicio");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorWhite)));
         //toolbar.setTitleTextColor(getResources().getColor(R.color.colorBlack));
-        //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-        //      .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,16 +81,13 @@ public class Inicio extends AppCompatActivity
         v.findViewById(R.id.recientes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(Inicio.this, "Recientes", Toast.LENGTH_SHORT).show();
             }
         });
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
-                Intent ListSong = new Intent(getApplicationContext(), Perfil_Activity.class);
-                startActivity(ListSong);
+                Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -107,23 +100,23 @@ public class Inicio extends AppCompatActivity
         listView.setAdapter(listAdapter);
 
         texts.add("Instituto");
-        image.add(R.drawable.instituto);
+        image.add(R.drawable.ic_notifications_black_24dp);
         classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
-        image.add(R.drawable.noticias);
+        image.add(R.drawable.ic_notifications_black_24dp);
         classes.add(NoticiasActivity.class);
 
         texts.add("Eventos");
-        image.add(R.drawable.events);
+        image.add(R.drawable.ic_notifications_black_24dp);
         classes.add(InstitutoActivity.class);
 
         texts.add("Convocatorias");
-        image.add(R.drawable.becas);
+        image.add(R.drawable.ic_notifications_black_24dp);
         classes.add(InstitutoActivity.class);
 
         texts.add("Becas");
-        image.add(R.drawable.becas);
+        image.add(R.drawable.ic_notifications_black_24dp);
         classes.add(BecasActivity.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -161,6 +154,4 @@ public class Inicio extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
