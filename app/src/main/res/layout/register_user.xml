@@ -126,7 +126,9 @@
             android:textColor="@color/colorWhite"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:id="@+id/btnlogup"/>
+            android:id="@+id/btnlogup"
+            android:stateListAnimator="@null"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
         <TextView
             android:layout_width="match_parent"

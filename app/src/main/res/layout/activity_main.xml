@@ -69,7 +69,10 @@
                     android:text="@string/start_button"
                     android:textColor="@color/colorWhite"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    />
 
                 <TextView
                     android:id="@+id/link_recover"
@@ -110,7 +113,9 @@
                 android:textColor="@color/colorPrimario"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:stateListAnimator="@null"/>
 
         </LinearLayout>
 
