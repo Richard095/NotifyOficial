@@ -1,20 +1,20 @@
 package dragcopy.notifyoficial;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 
-public class InstitutoActivity extends AppCompatActivity {
+
+public class Perfil_Activity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_institucion);
+        setContentView(R.layout.perfil_user);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -23,7 +23,7 @@ public class InstitutoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(v);
 
-        ActionBar actionBar = new ActionBar(v,this,"Instituto");
+        ActionBar actionBar = new ActionBar(v,this,"Perfil");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -33,6 +33,7 @@ public class InstitutoActivity extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

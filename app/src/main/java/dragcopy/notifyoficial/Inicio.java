@@ -1,5 +1,6 @@
 package dragcopy.notifyoficial;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -58,6 +59,9 @@ public class Inicio extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle("Inicio");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorWhite)));
+        //toolbar.setTitleTextColor(getResources().getColor(R.color.colorBlack));
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -84,7 +88,11 @@ public class Inicio extends AppCompatActivity
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
+
+                Intent ListSong = new Intent(getApplicationContext(), Perfil_Activity.class);
+                startActivity(ListSong);
+
+                //Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -97,23 +105,23 @@ public class Inicio extends AppCompatActivity
         listView.setAdapter(listAdapter);
 
         texts.add("Instituto");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.instituto);
         classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.noticias);
         classes.add(NoticiasActivity.class);
 
         texts.add("Eventos");
-        image.add(R.drawable.ic_notifications_black_24dp);
-        classes.add(EventosActivity.class);
+        image.add(R.drawable.events);
+        classes.add(InstitutoActivity.class);
 
         texts.add("Convocatorias");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.becas);
         classes.add(ConvocatoriasActivity.class);
 
         texts.add("Becas");
-        image.add(R.drawable.ic_notifications_black_24dp);
+        image.add(R.drawable.becas);
         classes.add(BecasActivity.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

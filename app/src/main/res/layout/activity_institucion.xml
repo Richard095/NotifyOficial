@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
 
-    <include layout="@layout/emptyactionbar" />
+    <include layout="@layout/emptyactionbar"/>
 
     <!-- añade 58 a la superior 78 -->
 
@@ -95,63 +93,63 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:id="@+id/boxy">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bordesombra">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordesombra">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre Escuela"
-            android:gravity="center"
-            android:id="@+id/name_school"
-            android:layout_margin="5dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Director"
-            android:gravity="center"
-            android:layout_below="@+id/name_school"
-            android:id="@+id/direct"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre Director"
-            android:gravity="center"
-            android:id="@+id/name_director"
-            android:layout_below="@id/direct"
-            android:layout_margin="8dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_director"
-            android:gravity="center"
-            android:id="@+id/icons">
-            <ImageView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_dashboard_black_24dp"
-                android:layout_margin="10dp"/>
-            <ImageView
-                android:layout_width="wrap_content"
+                android:text="Nombre Escuela"
+                android:gravity="center"
+                android:id="@+id/name_school"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_dashboard_black_24dp"
-                android:layout_margin="10dp"/>
+                android:text="Director"
+                android:gravity="center"
+                android:layout_below="@+id/name_school"
+                android:id="@+id/direct"/>
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre Director"
+                android:gravity="center"
+                android:id="@+id/name_director"
+                android:layout_below="@id/direct"
+                android:layout_margin="8dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas."
-            android:gravity="center"
-            android:layout_below="@+id/icons"
-            android:layout_margin="8dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_director"
+                android:gravity="center"
+                android:id="@+id/icons">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dashboard_black_24dp"
+                    android:layout_margin="10dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dashboard_black_24dp"
+                    android:layout_margin="10dp"/>
 
-    </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas."
+                android:gravity="center"
+                android:layout_below="@+id/icons"
+                android:layout_margin="8dp"/>
+
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 
