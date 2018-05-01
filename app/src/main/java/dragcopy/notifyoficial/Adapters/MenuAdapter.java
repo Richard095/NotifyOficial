@@ -20,12 +20,10 @@ import dragcopy.notifyoficial.R;
  */
 
 public class MenuAdapter extends ArrayAdapter<String> {
-
     private final Activity context;
     private final ArrayList<Class> towhere;
     private final ArrayList<String> items;
     private final ArrayList<Integer> images;
-
     public MenuAdapter(Activity context, ArrayList<String> items, ArrayList<Integer> images,ArrayList<Class> towhere) {
         super(context, R.layout.opcion_menu,items);
         this.context = context;
@@ -37,8 +35,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        LayoutInflater inflater = context.getLayoutInflater();
+        LayoutInflater inflater=context.getLayoutInflater();
         View rowview = inflater.inflate(R.layout.opcion_menu,null,true);
 
         TextView text = (TextView)rowview.findViewById(R.id.text);

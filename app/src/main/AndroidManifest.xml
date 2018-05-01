@@ -37,10 +37,11 @@
         <activity
             android:name=".BecasActivity"
             android:theme="@style/AppThemeBar.NoActionBar" />
+
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"
-            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+            android:theme="@style/AppThemeBar.NoActionBar"/>
     </application>
 
 </manifest>
