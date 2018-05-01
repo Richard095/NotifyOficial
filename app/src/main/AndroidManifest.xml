@@ -40,14 +40,13 @@
         <activity
             android:name=".Inicio"
             android:label="@string/title_home"
-            android:theme="@style/AppThemeBar.NoActionBar"/>
-
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
         <activity
-            android:name=".Perfil_Activity"
-            android:label="@string/title_home"
-            android:theme="@style/AppThemeBar.NoActionBar"/>
-
-
+            android:name=".EventosActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".ConvocatoriasActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 
 </manifest>
