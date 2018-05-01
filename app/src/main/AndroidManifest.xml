@@ -42,6 +42,13 @@
             android:name=".Inicio"
             android:label="@string/title_home"
             android:theme="@style/AppThemeBar.NoActionBar"/>
+
+        <activity
+            android:name=".Perfil_Activity"
+            android:label="perfíl"
+            android:theme="@style/AppTheme"/>
+
+
     </application>
 
 </manifest>

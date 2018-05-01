@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/tools">
 
-    <include layout="@layout/emptyactionbar" />
+    <include layout="@layout/emptyactionbar"/>
 
     <!-- añade 58 a la superior 78 -->
 

@@ -6,29 +6,45 @@
         android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <RelativeLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="15dp"
             android:background="?attr/selectableItemBackgroundBorderless">
+
             <TextView
                 android:id="@+id/text"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Institución" />
-            <ImageView
-                android:id="@+id/icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_dashboard_black_24dp"
-                android:layout_alignParentRight="true"/>
+                android:text="Institución"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"/>
+
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dashboard_black_24dp"
+                    android:layout_alignParentRight="true"
+                    android:adjustViewBounds="true"/>
+            </LinearLayout>
+
+
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
     <!--Cambio algo?-->
     </LinearLayout>

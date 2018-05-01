@@ -1,5 +1,6 @@
 package dragcopy.notifyoficial;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ public class Inicio extends AppCompatActivity
             return true;
         }
     };
+
+
 
     ArrayList<String> texts = new ArrayList<>();
     ArrayList<Integer> image = new ArrayList<>();
@@ -81,13 +85,16 @@ public class Inicio extends AppCompatActivity
         v.findViewById(R.id.recientes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(Inicio.this, "Recientes", Toast.LENGTH_SHORT).show();
             }
         });
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
+                Intent ListSong = new Intent(getApplicationContext(), Perfil_Activity.class);
+                startActivity(ListSong);
             }
         });
 
@@ -100,7 +107,7 @@ public class Inicio extends AppCompatActivity
         listView.setAdapter(listAdapter);
 
         texts.add("Instituto");
-        image.add(R.drawable.institucion);
+        image.add(R.drawable.instituto);
         classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
@@ -108,7 +115,7 @@ public class Inicio extends AppCompatActivity
         classes.add(NoticiasActivity.class);
 
         texts.add("Eventos");
-        image.add(R.drawable.eventos);
+        image.add(R.drawable.events);
         classes.add(InstitutoActivity.class);
 
         texts.add("Convocatorias");
@@ -154,4 +161,6 @@ public class Inicio extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
