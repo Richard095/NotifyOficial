@@ -7,9 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
-public class Perfil_Activity extends AppCompatActivity {
+public class PerfilActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -19,11 +20,12 @@ public class Perfil_Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        View v = LayoutInflater.from(this).inflate(R.layout.actionbar,null);
+        View v = LayoutInflater.from(this).inflate(R.layout.actionbarperfil,null);
         getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(v);
 
-        ActionBar actionBar = new ActionBar(v,this,"Perfil");
+        TextView t = v.findViewById(R.id.title);
+        t.setText("Perfil");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

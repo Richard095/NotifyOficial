@@ -31,7 +31,7 @@ public class NoticiasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(v);
 
-        ActionBar actionBar = new ActionBar(v,this,"Noticias");
+        ActionBar actionBar = new ActionBar(v,this,"Noticias",this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

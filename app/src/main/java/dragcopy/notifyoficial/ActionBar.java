@@ -1,6 +1,8 @@
 package dragcopy.notifyoficial;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ import android.widget.Toast;
  */
 
 public class ActionBar extends AppCompatActivity{
-    public ActionBar(View v, final Context context,String title){
+    public ActionBar(View v, final Context context, String title, final Activity activity){
         v.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,7 +30,10 @@ public class ActionBar extends AppCompatActivity{
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Perfil", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context,PerfilActivity.class);
+                context.startActivity(i);
+                activity.overridePendingTransition(R.anim.right_in, R.anim.right_out);
+
             }
         });
         TextView t = v.findViewById(R.id.title);

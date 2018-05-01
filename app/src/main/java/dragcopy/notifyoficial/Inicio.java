@@ -1,6 +1,5 @@
 package dragcopy.notifyoficial;
 
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +7,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -59,9 +57,15 @@ public class Inicio extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle("Inicio");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorWhite)));
-        //toolbar.setTitleTextColor(getResources().getColor(R.color.colorBlack));
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
+
+        View v = LayoutInflater.from(this).inflate(R.layout.actionbar,null);
+        getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(v);
+
+        dragcopy.notifyoficial.ActionBar actionBar = new dragcopy.notifyoficial.ActionBar(v,this,"Inicio",this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -69,32 +73,6 @@ public class Inicio extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        View v = LayoutInflater.from(this).inflate(R.layout.actionbar,null);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(v);
-
-        v.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Favoritos", Toast.LENGTH_SHORT).show();
-            }
-        });
-        v.findViewById(R.id.recientes).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Recientes", Toast.LENGTH_SHORT).show();
-            }
-        });
-        v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent ListSong = new Intent(getApplicationContext(), Perfil_Activity.class);
-                startActivity(ListSong);
-
-                //Toast.makeText(Inicio.this, "Perfil", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

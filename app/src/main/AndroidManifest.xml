@@ -47,6 +47,9 @@
         <activity
             android:name=".ConvocatoriasActivity"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".PerfilActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 
 </manifest>
