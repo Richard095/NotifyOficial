@@ -7,24 +7,28 @@
         <item
             android:id="@+id/acerca"
             android:icon="@drawable/ic_error_outline_black_24dp"
-            android:title="Acerca de" />
+            android:title="Acerca de"
+            android:iconTint="@color/notifystatus"/>
         <item
             android:id="@+id/contacto"
             android:icon="@drawable/ic_contact_mail_black_24dp"
-            android:title="Contacto"/>
+            android:title="Contacto"
+            android:iconTint="@color/notifystatus"/>
         <item
             android:id="@+id/soporte"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Soporte" />
+            android:title="Ajustes"
+            android:iconTint="@color/notifystatus"/>
         <item
             android:id="@+id/salir"
             android:icon="@drawable/ic_clear_black_24dp"
-            android:title="Salir" />
+            android:title="Salir"
+            android:iconTint="@color/notifystatus"/>
     </group>
 
 
 
-    <item android:title="Copyright (c) 2018 Notify">
+    <item android:title="Copyright 2018 Notify">
         <menu>
             <item
                 android:id="@+id/nav_share"

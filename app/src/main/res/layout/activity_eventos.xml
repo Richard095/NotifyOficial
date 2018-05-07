@@ -6,6 +6,13 @@
 
     <include layout="@layout/emptyactionbar" />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+
         <GridView
             android:listSelector="@color/colorTrasparente"
             android:layout_marginBottom="55dp"

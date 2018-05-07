@@ -54,6 +54,9 @@ public class NoticiasAdapter extends ArrayAdapter<String> {
         final ImageView imageView = rowview.findViewById(R.id.icon);
 
         titletv.setText(this.title.get(position));
+        if(titletv.getText().equals("null") || titletv.getText().equals("")){
+            titletv.setVisibility(View.GONE);
+        }
         notice.setText(this.news.get(position));
         imageView.setImageResource(images.get(position));
 

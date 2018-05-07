@@ -24,13 +24,11 @@ public class ConvocatoriasAdapter extends ArrayAdapter<String> {
     private final Activity context;
     private final ArrayList<String> texts;
     private final ArrayList<String> titles;
-    private final ArrayList<Boolean> hearts;
-    public ConvocatoriasAdapter(Activity context, ArrayList<String> texts, ArrayList<String> titles, ArrayList<Boolean> hearts) {
-        super(context, R.layout.opcion_menu,texts);
+    public ConvocatoriasAdapter(Activity context, ArrayList<String> texts, ArrayList<String> titles) {
+        super(context, R.layout.new_convocatoria,texts);
         this.context = context;
         this.texts=texts;
         this.titles = titles;
-        this.hearts = hearts;
     }
 
     @NonNull
@@ -46,12 +44,7 @@ public class ConvocatoriasAdapter extends ArrayAdapter<String> {
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hearts.set(position,!hearts.get(position));
-                if (hearts.get(position)){
-                    iv.setColorFilter(iv.getContext().getResources().getColor(R.color.notifystatus), PorterDuff.Mode.SRC_ATOP);
-                }else{
-                    iv.setColorFilter(iv.getContext().getResources().getColor(R.color.colorBlack), PorterDuff.Mode.SRC_ATOP);
-                }
+                iv.setColorFilter(iv.getContext().getResources().getColor(R.color.notifystatus), PorterDuff.Mode.SRC_ATOP);
             }
         });
 

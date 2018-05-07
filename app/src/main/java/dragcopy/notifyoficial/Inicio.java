@@ -1,5 +1,6 @@
 package dragcopy.notifyoficial;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,10 +31,6 @@ public class Inicio extends AppCompatActivity
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     listView.setVisibility(View.VISIBLE);
-                    findViewById(R.id.calificar).setVisibility(View.GONE);
-                    break;
-                case R.id.navigation_dashboard:
-                    listView.setVisibility(View.GONE);
                     findViewById(R.id.calificar).setVisibility(View.GONE);
                     break;
                 case R.id.navigation_notifications:
@@ -82,9 +79,9 @@ public class Inicio extends AppCompatActivity
         listView.setDivider(null);
         listView.setAdapter(listAdapter);
 
-        texts.add("Instituto");
-        image.add(R.drawable.instituto);
-        classes.add(InstitutoActivity.class);
+        //texts.add("Instituto");
+        //image.add(R.drawable.instituto);
+        //classes.add(InstitutoActivity.class);
 
         texts.add("Noticias");
         image.add(R.drawable.noticias);
@@ -92,7 +89,7 @@ public class Inicio extends AppCompatActivity
 
         texts.add("Eventos");
         image.add(R.drawable.events);
-        classes.add(InstitutoActivity.class);
+        classes.add(EventosActivity.class);
 
         texts.add("Convocatorias");
         image.add(R.drawable.becas);
@@ -123,18 +120,21 @@ public class Inicio extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.acerca) {
-            Toast.makeText(this,"Acerca de", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(Inicio.this,AcercaDeActivity.class);
+            startActivity(i);
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
         } else if (id == R.id.contacto) {
             Toast.makeText(this,"Contacto", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.soporte) {
-            Toast.makeText(this,"Soporte", Toast.LENGTH_SHORT).show();
-
+            Intent i = new Intent(Inicio.this,AjustesActivity.class);
+            startActivity(i);
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
         } else if (id == R.id.salir) {
             System.exit(0);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 }

@@ -9,6 +9,18 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -32,7 +44,12 @@ public class EventosActivity extends AppCompatActivity {
         }
     };
 
+    public static final String Url = "https://notify123.000webhostapp.com/publicaciones.json";
+    public static final String UrlImg = "https://notify123.000webhostapp.com/public-images.json";
+
     ArrayList<String> nombres = new ArrayList<>();
+    ArrayList<String> imgs = new ArrayList<>();
+    GridView gridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +71,44 @@ public class EventosActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-        GridView gridView = (GridView)findViewById(R.id.grid);
-        gridView.setAdapter(new EventosAdapter(this,nombres));
-        nombres.add("Deportes");
-        nombres.add("Deportes");
-        nombres.add("Deportes");
-        nombres.add("Deportes");
-        nombres.add("Deportes");
+        gridView = (GridView)findViewById(R.id.grid);
+        loadData();
+
     }
+    String link="";
+
+    public void loadData(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            findViewById(R.id.progress).setVisibility(View.GONE);
+                            JSONObject obj = new JSONObject(response);
+                            JSONArray heroarray = obj.getJSONArray("publicaciones");
+
+                            for(int i=0;i<heroarray.length();i++){
+                                JSONObject heroObject = heroarray.getJSONObject(i);
+                                if(heroObject.getString("cat_public_id").equals("2")) {
+                                    nombres.add(heroObject.getString("titulo"));
+                                    imgs.add(link);
+                                }
+                            }
+                            gridView.setAdapter(new EventosAdapter(EventosActivity.this,nombres,imgs));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(EventosActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
 
     @Override
     public void onBackPressed() {

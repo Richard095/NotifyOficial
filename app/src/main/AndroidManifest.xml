@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dragcopy.notifyoficial">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,6 +51,18 @@
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
         <activity
             android:name=".PerfilActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".RecientesActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".FavoritosActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".AcercaDeActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".AjustesActivity"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 

@@ -9,10 +9,10 @@
     <string name="title_activity_inicio">Inicio</string>
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Novedades</string>
-    <string name="title_notifications">Calificar App</string>
+    <string name="title_notifications">Instituto</string>
     <string name="navigation_drawer_open">button_open</string>
     <string name="navigation_drawer_close">button_close</string>
-    <string name="notify">Notify®</string>
+    <string name="notify">Notify</string>
     <string name="calificar_instituci_n">Calificar Institución</string>
     <string name="por_favor_ingrese_los_siguientes_datos">Por favor ingrese los siguientes datos</string>
 

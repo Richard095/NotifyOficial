@@ -65,7 +65,10 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:id="@+id/btnlogup"
-                android:layout_marginBottom="55dp"/>
+                android:layout_marginBottom="55dp"
+                android:stateListAnimator="@null"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                />
         </LinearLayout>
     </LinearLayout>
     </android.support.v7.widget.CardView>

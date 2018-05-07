@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 /**
@@ -18,13 +17,17 @@ public class ActionBar extends AppCompatActivity{
         v.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Favoritos", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context,FavoritosActivity.class);
+                context.startActivity(i);
+                activity.overridePendingTransition(R.anim.right_in, R.anim.right_out);
             }
         });
         v.findViewById(R.id.recientes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Recientes", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context,RecientesActivity.class);
+                context.startActivity(i);
+                activity.overridePendingTransition(R.anim.right_in, R.anim.right_out);
             }
         });
         v.findViewById(R.id.photo).setOnClickListener(new View.OnClickListener() {
@@ -33,7 +36,6 @@ public class ActionBar extends AppCompatActivity{
                 Intent i = new Intent(context,PerfilActivity.class);
                 context.startActivity(i);
                 activity.overridePendingTransition(R.anim.right_in, R.anim.right_out);
-
             }
         });
         TextView t = v.findViewById(R.id.title);

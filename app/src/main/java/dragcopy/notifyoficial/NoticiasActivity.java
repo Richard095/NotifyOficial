@@ -7,6 +7,18 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -19,6 +31,7 @@ public class NoticiasActivity extends AppCompatActivity {
     ArrayList<String> news = new ArrayList<>();
     ArrayList<String> fullnews = new ArrayList<>();
     ListView listView;
+    public static final String Url = "https://notify123.000webhostapp.com/publicaciones.json";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,46 +50,45 @@ public class NoticiasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         listView = (ListView) findViewById(R.id.list);
-        NoticiasAdapter listAdapter = new NoticiasAdapter(this, titles, image,news,fullnews,listView,true);
-        listView.setDivider(null);
-        listView.setAdapter(listAdapter);
 
-        titles.add("Instituto");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
+        loadData();
+    }
 
-        titles.add("Instituto 1");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
+    public void loadData(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            findViewById(R.id.progress).setVisibility(View.GONE);
+                            JSONObject obj = new JSONObject(response);
+                            JSONArray heroarray = obj.getJSONArray("publicaciones");
 
-        titles.add("Instituto 2");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-
-        titles.add("Instituto 3");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-
-        titles.add("Instituto 4");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-
-        titles.add("Instituto 5");
-        image.add(R.drawable.star);
-        news.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-        fullnews.add("Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres" +
-                "Aqui va la noticia, el texto de la noticia, el cuerpo de la noticia y todo eso tambien puede ir una imagen o algo asi asi que tu elige que quieres");
-
+                            for(int i=0;i<heroarray.length();i++){
+                                JSONObject heroObject = heroarray.getJSONObject(i);
+                                if(heroObject.getString("cat_public_id").equals("1")) {
+                                    titles.add(heroObject.getString("titulo"));
+                                    image.add(R.drawable.star);
+                                    String text = heroObject.getString("descripcion").substring(0, heroObject.getString("descripcion").length() / 2);
+                                    news.add(text + "...");
+                                    fullnews.add(heroObject.getString("descripcion"));
+                                }
+                            }
+                            NoticiasAdapter listAdapter = new NoticiasAdapter(NoticiasActivity.this, titles, image,news,fullnews,listView,true);
+                            listView.setDivider(null);
+                            listView.setAdapter(listAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(NoticiasActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
     @Override
