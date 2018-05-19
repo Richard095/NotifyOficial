@@ -95,13 +95,24 @@
 
                     </LinearLayout>
 
+                    <ScrollView
+                        android:layout_below="@+id/icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
                     <TextView
+                        android:id="@+id/descripcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas."
+                        android:text="aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas.
+aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas.
+aqui va a ir una texto posiblemente largo y chido asi que asi lo dejamos pero podria haber mucho mas.
+"
                         android:gravity="center"
-                        android:layout_below="@+id/icons"
-                        android:layout_margin="8dp"/>
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"/>
+                    </ScrollView>
 
                 </RelativeLayout>
             </android.support.v7.widget.CardView>

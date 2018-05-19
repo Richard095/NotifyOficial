@@ -63,7 +63,22 @@ public class NoticiasAdapter extends ArrayAdapter<String> {
         rowview.findViewById(R.id.opennews).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notice.setText(fullnew.get(position));
+                list.setVisibility(View.GONE);
+                context.findViewById(R.id.look_noticia).setVisibility(View.VISIBLE);
+                TextView t=context.findViewById(R.id.look_noticia).findViewById(R.id.title);
+                TextView n=context.findViewById(R.id.look_noticia).findViewById(R.id.notice);
+                TextView open=context.findViewById(R.id.look_noticia).findViewById(R.id.opennews);
+                ImageView i=context.findViewById(R.id.look_noticia).findViewById(R.id.icon);
+
+                t.setText(title.get(position));
+                n.setText(fullnew.get(position));
+                i.setImageResource(images.get(position));
+                open.setText("Comentar");
+
+
+                if(t.getText().equals("null") || t.getText().equals("")){
+                    t.setVisibility(View.GONE);
+                }
             }
         });
 

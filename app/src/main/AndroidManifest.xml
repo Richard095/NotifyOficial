@@ -64,6 +64,9 @@
         <activity
             android:name=".AjustesActivity"
             android:theme="@style/AppThemeBar.NoActionBar"></activity>
+        <activity
+            android:name=".LookEventoActivity"
+            android:theme="@style/AppThemeBar.NoActionBar"></activity>
     </application>
 
 </manifest>

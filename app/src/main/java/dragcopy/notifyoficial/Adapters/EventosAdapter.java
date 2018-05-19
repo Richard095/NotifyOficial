@@ -1,6 +1,7 @@
 package dragcopy.notifyoficial.Adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import dragcopy.notifyoficial.LookEventoActivity;
 import dragcopy.notifyoficial.R;
 
 /**
@@ -51,6 +53,14 @@ public class EventosAdapter extends BaseAdapter {
         //imageView.setBackgroundResource(R.drawable.logo);
         imageView.setBackgroundDrawable(new ColorDrawable(context.getResources().getColor(R.color.colorBlack)));
         //Picasso.with(context).load(imgs.get(position)).into(imageView);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, LookEventoActivity.class);
+                context.startActivity(i);
+                context.overridePendingTransition(R.anim.right_in, R.anim.right_out);
+            }
+        });
 
         t.setText(nombre.get(position));
         t.bringToFront();

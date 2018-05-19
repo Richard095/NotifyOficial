@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import dragcopy.notifyoficial.Adapters.NoticiasAdapter;
@@ -31,7 +32,7 @@ public class NoticiasActivity extends AppCompatActivity {
     ArrayList<String> news = new ArrayList<>();
     ArrayList<String> fullnews = new ArrayList<>();
     ListView listView;
-    public static final String Url = "https://notify123.000webhostapp.com/publicaciones.json";
+    public static final String Url = "http://sergrlcode.pythonanywhere.com/json/publicacion/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,23 +62,27 @@ public class NoticiasActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             findViewById(R.id.progress).setVisibility(View.GONE);
-                            JSONObject obj = new JSONObject(response);
-                            JSONArray heroarray = obj.getJSONArray("publicaciones");
+                            JSONArray heroarray = new JSONArray(response);
 
                             for(int i=0;i<heroarray.length();i++){
                                 JSONObject heroObject = heroarray.getJSONObject(i);
                                 if(heroObject.getString("cat_public_id").equals("1")) {
-                                    titles.add(heroObject.getString("titulo"));
+                                    String title = new String(heroObject.getString("titulo").getBytes("ISO-8859-1"),"UTF-8");
+                                    String text = new String(heroObject.getString("descripcion").getBytes("ISO-8859-1"),"UTF-8");
+                                    String textnew = text.substring(0, heroObject.getString("descripcion").length() / 2);
+
+                                    titles.add(title);
                                     image.add(R.drawable.star);
-                                    String text = heroObject.getString("descripcion").substring(0, heroObject.getString("descripcion").length() / 2);
-                                    news.add(text + "...");
-                                    fullnews.add(heroObject.getString("descripcion"));
+                                    news.add(textnew + "...");
+                                    fullnews.add(text);
                                 }
                             }
                             NoticiasAdapter listAdapter = new NoticiasAdapter(NoticiasActivity.this, titles, image,news,fullnews,listView,true);
                             listView.setDivider(null);
                             listView.setAdapter(listAdapter);
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
                     }
@@ -94,16 +99,28 @@ public class NoticiasActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case android.R.id.home:finish();
+            case android.R.id.home:
+            if (listView.getVisibility()==View.GONE){
+                listView.setVisibility(View.VISIBLE);
+                findViewById(R.id.look_noticia).setVisibility(View.GONE);
+                return false;
+            }else {
+                finish();
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
-                return true;
+                return false;
+            }
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        if (listView.getVisibility()==View.GONE){
+            listView.setVisibility(View.VISIBLE);
+            findViewById(R.id.look_noticia).setVisibility(View.GONE);
+        }else {
+            super.onBackPressed();
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        }
     }
 }

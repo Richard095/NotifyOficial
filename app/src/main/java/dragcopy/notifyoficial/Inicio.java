@@ -15,8 +15,21 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import dragcopy.notifyoficial.Adapters.MenuAdapter;
@@ -41,6 +54,37 @@ public class Inicio extends AppCompatActivity
             return true;
         }
     };
+    public static final String Url = "http://sergrlcode.pythonanywhere.com/json/organizacion/";
+
+    public void loadData(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response1) {
+                        try {
+                            String response = new String(response1.getBytes("ISO-8859-1"),"UTF-8");
+                            JSONArray heroarray = new JSONArray(response);
+
+                            //for(int i=0;i<heroarray.length();i++){}
+                            JSONObject heroObject = heroarray.getJSONObject(0);
+                            escuela.setText(heroObject.getString("nombre"));
+                            director.setText(heroObject.getString("director"));
+                            descripcion.setText(heroObject.getString("descripcion"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Inicio.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
 
     ArrayList<String> texts = new ArrayList<>();
     ArrayList<Integer> image = new ArrayList<>();
@@ -70,7 +114,6 @@ public class Inicio extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -78,6 +121,10 @@ public class Inicio extends AppCompatActivity
         listView = (ListView) findViewById(R.id.list);
         listView.setDivider(null);
         listView.setAdapter(listAdapter);
+
+        escuela = (TextView) findViewById(R.id.name_school);
+        director = (TextView) findViewById(R.id.name_director);
+        descripcion = (TextView) findViewById(R.id.descripcion);
 
         //texts.add("Instituto");
         //image.add(R.drawable.instituto);
@@ -101,8 +148,9 @@ public class Inicio extends AppCompatActivity
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        loadData();
     }
-
+    TextView escuela,director,descripcion;
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

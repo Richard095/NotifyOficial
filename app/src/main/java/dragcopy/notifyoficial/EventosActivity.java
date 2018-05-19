@@ -22,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import dragcopy.notifyoficial.Adapters.EventosAdapter;
@@ -44,8 +45,7 @@ public class EventosActivity extends AppCompatActivity {
         }
     };
 
-    public static final String Url = "https://notify123.000webhostapp.com/publicaciones.json";
-    public static final String UrlImg = "https://notify123.000webhostapp.com/public-images.json";
+    public static final String Url = "http://sergrlcode.pythonanywhere.com/json/publicacion/";
 
     ArrayList<String> nombres = new ArrayList<>();
     ArrayList<String> imgs = new ArrayList<>();
@@ -70,7 +70,6 @@ public class EventosActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
         gridView = (GridView)findViewById(R.id.grid);
         loadData();
 
@@ -84,18 +83,20 @@ public class EventosActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             findViewById(R.id.progress).setVisibility(View.GONE);
-                            JSONObject obj = new JSONObject(response);
-                            JSONArray heroarray = obj.getJSONArray("publicaciones");
+                            JSONArray heroarray = new JSONArray(response);
 
                             for(int i=0;i<heroarray.length();i++){
                                 JSONObject heroObject = heroarray.getJSONObject(i);
                                 if(heroObject.getString("cat_public_id").equals("2")) {
-                                    nombres.add(heroObject.getString("titulo"));
+                                    String text = new String(heroObject.getString("titulo").getBytes("ISO-8859-1"),"UTF-8");
+                                    nombres.add(text);
                                     imgs.add(link);
                                 }
                             }
                             gridView.setAdapter(new EventosAdapter(EventosActivity.this,nombres,imgs));
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
                     }
